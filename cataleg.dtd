@@ -1,0 +1,39 @@
+<!ELEMENT cataleg (single | album)+>
+
+<!ELEMENT single (titol, descripcio?, pais, idioma, genere*, grup, membres, durada)>
+<!ATTLIST single codi CDATA #REQUIRED>
+
+<!ELEMENT album (titol, descripcio?, pais, idioma, genere*, grup, membres, numero_cançons, titols_cançons)>
+<!ATTLIST album codi CDATA #REQUIRED>
+
+<!ELEMENT titol (#PCDATA)>
+<!ELEMENT descripcio (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+
+<!ELEMENT genere (Música_clásica |Jazz |Blues |Góspel |Soul |Pop |Rock_and_Roll |Country)>
+<!ELEMENT Música_clásica EMPTY>
+<!ELEMENT Jazz EMPTY>
+<!ELEMENT Blues EMPTY>
+<!ELEMENT Góspel EMPTY>
+<!ELEMENT Soul EMPTY>
+<!ELEMENT Pop EMPTY>
+<!ELEMENT Rock_and_Roll EMPTY>
+<!ELEMENT Country EMPTY>
+
+
+<!ELEMENT grup (#PCDATA)>
+<!ELEMENT membres (membre+)>
+<!ELEMENT membre (nom)>
+<!ATTLIST membre sexe (home | dona) #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+
+<!ELEMENT dur (#PCDATA)> <!ELEMENT durada (#PCDATA)>
+
+<!ELEMENT numero_cançons (#PCDATA)>
+<!ELEMENT titols_cançons (canço+)>
+<!ELEMENT canço (titol_canço, durada_canço)>
+<!ATTLIST canço numero CDATA #REQUIRED>
+
+<!ELEMENT titol_canço (#PCDATA)>
+<!ELEMENT durada_canço (#PCDATA)>
