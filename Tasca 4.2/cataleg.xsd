@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="cataleg">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="single"/>
+        <xs:element ref="album"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="single">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titol" type="xs:string"/>
+        <xs:element name="descripcio" type="xs:string" minOccurs="0"/>
+        <xs:element name="pais" type="xs:string"/>
+        <xs:element name="idioma" type="xs:string"/>
+        <xs:element ref="genere" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="grup" type="xs:string"/>
+        <xs:element ref="membres"/>
+        <xs:element name="durada" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="codi" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="album">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titol" type="xs:string"/>
+        <xs:element name="descripcio" type="xs:string" minOccurs="0"/>
+        <xs:element name="pais" type="xs:string"/>
+        <xs:element name="idioma" type="xs:string"/>
+        <xs:element ref="genere" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="grup" type="xs:string"/>
+        <xs:element ref="membres"/>
+        <xs:element name="numero_cançons" type="xs:integer"/>
+        <xs:element ref="titols_cançons"/>
+      </xs:sequence>
+      <xs:attribute name="codi" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="genere">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Música clásica"/>
+        <xs:enumeration value="Jazz"/>
+        <xs:enumeration value="Blues"/>
+        <xs:enumeration value="Góspel"/>
+        <xs:enumeration value="Soul"/>
+        <xs:enumeration value="Pop"/>
+        <xs:enumeration value="Rock and Roll"/>
+        <xs:enumeration value="Country"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="membres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="membre" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="membre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nom" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="sexe" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="home"/>
+            <xs:enumeration value="dona"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="titols_cançons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="canço" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="canço">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titol_canço" type="xs:string"/>
+        <xs:element name="durada_canço" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="numero" type="xs:integer" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cataleg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="cataleg.xsd">
+
+  <single codi="S001">
+    <titol>Flowers</titol>
+    <descripcio>Un èxit mundial</descripcio>
+    <pais>EUA</pais>
+    <idioma>Anglès</idioma>
+    <genere>Pop</genere>
+    <grup>Miley Cyrus</grup>
+    <membres>
+      <membre sexe="dona">
+        <nom>Miley Cyrus</nom>
+      </membre>
+    </membres>
+    <durada>3:20</durada>
+  </single>
+
+  <album codi="A001">
+    <titol>Abbey Road</titol>
+    <pais>Regne Unit</pais>
+    <idioma>Anglès</idioma>
+    <genere>Rock and Roll</genere>
+    <genere>Pop</genere>
+    <grup>The Beatles</grup>
+    <membres>
+      <membre sexe="home">
+        <nom>John Lennon</nom>
+      </membre>
+      <membre sexe="home">
+        <nom>Paul McCartney</nom>
+      </membre>
+    </membres>
+    <numero_cançons>2</numero_cançons>
+    <titols_cançons>
+      <canço numero="1">
+        <titol_canço>Come Together</titol_canço>
+        <durada_canço>4:20</durada_canço>
+      </canço>
+      <canço numero="2">
+        <titol_canço>Something</titol_canço>
+        <durada_canço>3:03</durada_canço>
+      </canço>
+    </titols_cançons>
+  </album>
+
+</cataleg>
